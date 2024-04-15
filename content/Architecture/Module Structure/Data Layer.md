@@ -1,3 +1,7 @@
+---
+title: 
+aliases: []
+---
 The Data Layer is responsible for all communication with external data sources, such as fetching data from APIs or accessing device cache. It consists of three main components: Models, Repositories, and DataSources.
 
 ## Models (DTO)
