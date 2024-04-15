@@ -1,5 +1,10 @@
 ---
 title: AIT Flutter Guideline
 ---
-![[content/Architecture/Architecture]]
 
+Welcome to AIT Flutter Guideline
+
+Table of Content :
+
+- [[Architecture]]
+- Test
