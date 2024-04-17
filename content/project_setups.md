@@ -4,6 +4,8 @@
 
 For creating a Git repository, it's recommended to reach out to our DevOps [Helpdesk](https://helpdesk.akarinti.tech/support/tickets/new) to initiate the process. Make sure to mention to use this repository as a template project. If the repository has already been created without using the specified template, you can clone the repository and start your project from there.
 
+---
+
 ## FVM
 
 FVM, or Flutter Version Management, is a command-line tool designed to simplify the process of managing multiple versions of the Flutter SDK on your development machine. It provides a convenient way to switch between different Flutter SDK versions, ensuring compatibility with your Flutter projects.
@@ -27,8 +29,43 @@ FVM, or Flutter Version Management, is a command-line tool designed to simplify 
   - fvm list: Lists all installed Flutter SDK versions.
 
 - Project Configuration: To associate a specific Flutter SDK version with a project, navigate to the project directory in your terminal and use fvm use <version> to set the desired SDK version. FVM will create a .fvm file in the project directory to store this configuration.
+- Updating Flutter Version: If you need to upgrade flutter version just in case because some library needs it, run fvm use <version_number> --force inroot project terminal. for example fvm use 3.10.5 --force. Then notice all team member to run fvm install after they already pull latest changes.
 
 > for more detailed on how to use fvm you could go to [fvm official doc](https://fvm.app/)
+
+### IDE Setup
+
+For more complete guide or extra features, see this link: https://fvm.app/docs/getting_started/configuration/#ide
+
+#### VSCode
+
+- open or create settings.json in .vscode directory
+- make sure to add these to the json config:
+
+```json
+{
+  "dart.flutterSdkPath": ".fvm/flutter_sdk",
+  // Remove .fvm files from search
+  "search.exclude": {
+    "**/.fvm": true
+  },
+  // Remove from file watching
+  "files.watcherExclude": {
+    "**/.fvm": true
+  },
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "explicit",
+    "source.organizeImports": "explicit"
+  }
+}
+```
+
+#### Android Studio
+
+- Every time you open the project, make sure you change “Flutter SDK” path to /.fvm/flutter_sdk
+- see link above to exclude .fvm/flutter_sdk from being scanned by IDE
+
+---
 
 ## Melos
 
@@ -56,9 +93,11 @@ Melos is a powerful and flexible tool for managing Dart and Flutter monorepos. I
 
 > for more info about melos you could read it [here](https://melos.invertase.dev/~melos-latest)
 
+---
+
 ## Env
 
-### Purpose
+### Why use Env?
 
 The .env file, short for "environment," serves a vital role in storing configuration variables and sensitive information necessary for your application to function seamlessly across different environments, including development, testing, and production.
 we are using [envied package](https://pub.dev/packages/envied) to help us set up and generate our environment file
@@ -108,6 +147,3 @@ we are using [envied package](https://pub.dev/packages/envied) to help us set up
 > During early development stages, you can populate the env.prod file with temporary data or copy environment variables declared in .env.dev.
 
 > Remember, we gitignore the .env file and its generated files. Therefore, if you join a project in progress, you can obtain the required data and variables from your colleagues.
-
-> These guidelines ensure a streamlined setup process and maintain the security and integrity of your application's configuration.
-

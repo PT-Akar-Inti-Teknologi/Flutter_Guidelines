@@ -1,0 +1,19 @@
+{
+	"nodes":[
+		{"id":"ee43341fbd89b9e5","x":-240,"y":-200,"width":400,"height":400,"type":"file","file":"content/Architecture/Architecture.md"},
+		{"id":"2372f3cd0968d0e9","x":-960,"y":-360,"width":400,"height":400,"type":"file","file":"content/Architecture/Module Grouping/Module Grouping.md"},
+		{"id":"dcd4d56b902dc2ac","x":1120,"y":-760,"width":400,"height":400,"type":"file","file":"content/Architecture/Module Structure/Presentation.md"},
+		{"id":"0828187f7c50ce06","x":1120,"y":-280,"width":400,"height":400,"type":"file","file":"content/Architecture/Module Structure/Domain Layer.md"},
+		{"id":"98561812d9d4e071","x":1120,"y":280,"width":400,"height":400,"type":"file","file":"content/Architecture/Module Structure/Data Layer.md"},
+		{"id":"a24f6827c4e8ff19","x":440,"y":-280,"width":400,"height":400,"type":"file","file":"content/Architecture/Module Structure/Module Structure.md"}
+	],
+	"edges":[
+		{"id":"ee2ad121e2d5ba9b","fromNode":"ee43341fbd89b9e5","fromSide":"top","toNode":"2372f3cd0968d0e9","toSide":"top"},
+		{"id":"8b51e963de32c4d3","fromNode":"ee43341fbd89b9e5","fromSide":"top","toNode":"a24f6827c4e8ff19","toSide":"top"},
+		{"id":"606f2132fe8e16e1","fromNode":"dcd4d56b902dc2ac","fromSide":"top","toNode":"0828187f7c50ce06","toSide":"top"},
+		{"id":"3a9814dde2312c56","fromNode":"0828187f7c50ce06","fromSide":"bottom","toNode":"98561812d9d4e071","toSide":"top"},
+		{"id":"0192dc53a8e6c244","fromNode":"a24f6827c4e8ff19","fromSide":"right","toNode":"dcd4d56b902dc2ac","toSide":"left"},
+		{"id":"48977dce146e03fb","fromNode":"a24f6827c4e8ff19","fromSide":"right","toNode":"0828187f7c50ce06","toSide":"left"},
+		{"id":"aa4502a51f2d7cbe","fromNode":"a24f6827c4e8ff19","fromSide":"right","toNode":"98561812d9d4e071","toSide":"left"}
+	]
+}
