@@ -12,13 +12,15 @@ there are various method for installing ruby you can find the methods that suit 
 It is recommended that you use Bundler and Gemfile to define your dependency on fastlane. This will clearly define the fastlane version to be used and its dependencies, and will also speed up fastlane execution.
 
 - Install Bundler by running gem install bundler
-- Create a ./Gemfile in the <root_project>/<app>/<app_name>/android with the content
+- Create a ./Gemfile in the <project_app>/android with the content
 
 ```
 source "https://rubygems.org"
 
 gem "fastlane"
 ```
+
+> <project_app> here is the path where you usually run your flutter project (eg pakuwon_project/app/pakuwon)
 
 - Run bundle update
 - Every time you run fastlane, use bundle exec fastlane <laneMethodName>
@@ -32,7 +34,7 @@ gem "fastlane"
     - Appfile which defines configuration information that is global to your app
     - Fastfile which defines the "lanes" that drive the behavior of fastlane
 
-- delete Gemfile.lock and then move the fastlane directory and the Gemfile, into <root_project>/<app>/<app_name>. this is neccessary since we want to put it in app directory and not in android but if we do it here at the start we will have some trouble when running fastlane init since it will also want us to generate for IOS
+- delete Gemfile.lock and then move the fastlane directory and the Gemfile, into <project_app>. this is neccessary since we want to put it in app directory and not in android but if we do it here at the start we will have some trouble when running fastlane init since it will also want us to generate for IOS
 
 ## Configuring Fastlane
 
@@ -62,3 +64,14 @@ desc "Deploy Firebase Distribution"
 > release_notes_file: will be a path to file where you put your release note. remember to update the release note before you release a new version
 
 > testers_file: will be a list of email that will getting the email of the app Distribution
+
+## Run fastlane
+
+run and distribute your fastlane using
+
+```
+bundle exec fastlane [lane]
+```
+
+> [lane] here is the method name that you write on fastfile. so if you copying the snippet from Configuring fastlane you could run it with
+> bundle exec fastlane distributeDev
