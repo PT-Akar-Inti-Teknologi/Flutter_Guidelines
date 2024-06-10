@@ -34,8 +34,6 @@ gem "fastlane"
     - Appfile which defines configuration information that is global to your app
     - Fastfile which defines the "lanes" that drive the behavior of fastlane
 
-- delete Gemfile.lock and then move the fastlane directory and the Gemfile, into <project_app>. this is neccessary since we want to put it in app directory and not in android but if we do it here at the start we will have some trouble when running fastlane init since it will also want us to generate for IOS
-
 ## Configuring Fastlane
 
 - on fastlane directory fin Fastfile
@@ -61,17 +59,19 @@ desc "Deploy Firebase Distribution"
 
 > apk_path: is where your flutter app outputs will be, to find it try to build an app, then copy the path provided at the end of the build process.
 
-> release_notes_file: will be a path to file where you put your release note. remember to update the release note before you release a new version
+> release_notes_file: will be a path to file where you put your release note. **remember to update the release note before you release a new version**
 
 > testers_file: will be a list of email that will getting the email of the app Distribution
 
 ## Run fastlane
 
-run and distribute your fastlane using
+cd into android folder then run
 
 ```
 bundle exec fastlane [lane]
 ```
 
+to distribute your fastlane
+
 > [lane] here is the method name that you write on fastfile. so if you copying the snippet from Configuring fastlane you could run it with
-> bundle exec fastlane distributeDev
+> `bundle exec fastlane distributeDev`
